@@ -8,8 +8,7 @@ const mongoose = require('mongoose');
 
 app.use(express.json())
 
-//temp variable to store the list of users
-const usersList = []
+
 let register = require('./models/register.model');
 const req = require('express/lib/request')
 
