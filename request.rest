@@ -1,0 +1,92 @@
+GET http://localhost:3100/api/buyer/list-of-sellers
+
+
+###
+
+
+GET http://localhost:3100/users/auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemFrMSIsInR5cGUiOiJzZWxsZXIiLCJpYXQiOjE2NDc2NDQ5NTJ9.1YIPlMnbqzSeXK91WCUaoNFDoVWc1WCIyzzc7l4DnqQ
+###
+
+POST http://localhost:3100/api/auth/register 
+Content-Type: application/json
+
+{
+"name": "zak2",
+"password": "password2",
+"type": "buyer"
+}
+
+###
+
+POST http://localhost:3100/api/auth/login
+Content-Type: application/json
+
+{
+"name": "zak1", "password": "password1"
+}
+
+###
+
+POST http://localhost:3100/api/seller/create-catalog
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemFrNSIsInR5cGUiOiJzZWxsZXIiLCJpYXQiOjE2NDc2NDcxNjl9.MWupdrc70BFeXsv9adBqbsuH_u8itQ9gy4vxVuxlLJg
+Content-Type: application/json
+
+
+[
+    {
+        "name": "item5", "price": 5
+    },
+    {
+        "name": "item6", "price": 6
+    }
+]
+
+###
+
+GET http://localhost:3100/api/buyer/seller-catalog/:seller_id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemFrMiIsInR5cGUiOiJidXllciIsImlhdCI6MTY0NzY0Nzg3MH0.NgArKWWhRKjYGG5SERaCMdkV4iV5bf2YiptjxWBABJY
+Content-Type: application/json
+
+{
+    "name": "zak1"    
+}
+
+
+###
+
+
+POST  http://localhost:3100/api/buyer/create-order/:seller_id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemFrMiIsInR5cGUiOiJidXllciIsImlhdCI6MTY0NzY0Nzg3MH0.NgArKWWhRKjYGG5SERaCMdkV4iV5bf2YiptjxWBABJY
+Content-Type: application/json
+
+[
+    {
+        "name": "zak3"
+    },
+    {
+        "buyer": "zak2",
+        "order": [
+            {
+                "name": "item3",
+                "price": 3
+            },
+            {
+                "name": "item6",
+                "price": 6
+            }
+        ]
+    }
+]
+
+
+###
+
+
+GET http://localhost:3100/api/seller/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiemFrMSIsInR5cGUiOiJzZWxsZXIiLCJpYXQiOjE2NDc2NDk1MzJ9.Rwdyrumjjl_kAxU0GQw0z_U_zBq28D-p41KIiHgCZDc
+Content-Type: application/json
+
+{
+    "name": "zak1"
+}
