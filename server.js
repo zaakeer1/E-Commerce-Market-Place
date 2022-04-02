@@ -29,7 +29,7 @@ app.get('/api/buyer/list-of-sellers',authenticateToken, async (req, res) => {
   .catch(err => res.status(400).json('Error: ' + err));
 })
 
-//Just a endpoint to check if the token authentication is working as expected(not related to assignment) 
+//Just a endpoint to check if the token authentication is working as expected
 app.get('/users/auth',authenticateToken, (req, res) => {  
   let u = register.find({"name":req.user.name})
   .then(u => res.json(u))
