@@ -1,8 +1,8 @@
-E-Commerce Market Place
+#E-Commerce Market Place
 
 This application serves as an common platform for users to buy and sell items.  
 
-The following functionalities were implemented using REST APIs:
+**The following functionalities were implemented using REST APIs:**
 
 -> Buyers and sellers can register as a new user (The paswords were stored in a encrypted format to protect against data breaches) 
 
