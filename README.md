@@ -6,19 +6,19 @@ All the passwords are stored in an encrypted form in the database to protect aga
 
 ## **The following functionalities were implemented using REST APIs:**
 
-- Buyers and sellers can register as a new user 
+- Buyers and sellers can register as a new user (/api/auth/register)
 
-- Registered users can login to the system 
+- Registered users can login to the system (/api/auth/login)
 
-- Sellers can build a catalog of items, with each item having a name and price
+- Sellers can build a catalog of items, with each item having a name and price (/api/seller/create-catalog)
 
-- Buyers can GET a list of sellers
+- Buyers can GET a list of sellers (/api/buyer/list-of-sellers)
 
-- Buyers can GET a specific seller's catalog (list of items)
+- Buyers can GET a specific seller's catalog (/api/buyer/seller-catalog/:seller_id)
 
-- Buyers can create an Order that contains a list of items from the seller's catalog
+- Buyers can create an Order that contains a list of items from the seller's catalog (/api/buyer/create-order/:seller_id)
 
-- Sellers can GET a list of all orders they've received
+- Sellers can GET a list of all orders they've received (/api/seller/orders)
 
 Database: mongoBD atlas
 
